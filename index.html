@@ -1,0 +1,589 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* upgraded sales sections */
+.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.problem{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:20px}
+.problem b{display:block;font:700 18px/1.2 var(--f-display);margin-bottom:8px}
+.problem span{color:var(--ink-2);font-size:14px}
+.why{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.why-main{background:var(--ink);color:var(--paper);border-radius:16px;padding:34px}
+.why-main h3{font-size:32px}
+.why-photo{display:block;width:calc(100% + 68px);max-width:none;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:62% 30%;margin:-34px -34px 28px;border-radius:16px 16px 0 0}
+.why-main p{color:color-mix(in srgb,var(--paper) 76%,transparent)}
+.why-list{display:grid;gap:10px}
+.why-item{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px}
+.why-item b{display:block;margin-bottom:5px;font-family:var(--f-display)}
+.why-item span{color:var(--ink-2);font-size:14px}
+.auto-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.flow{background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:16px;position:relative}
+.flow b{font:700 16px/1.2 var(--f-display);display:block;margin-bottom:6px}
+.flow span{font-size:13px;color:var(--ink-2)}
+.flow:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);background:var(--paper);color:var(--indigo);padding:0 3px;font-family:var(--f-mono);z-index:2}
+.web-callout{margin-top:20px;border:1.5px solid var(--indigo);border-radius:14px;padding:26px;background:color-mix(in srgb,var(--indigo) 5%,var(--sheet))}
+.web-callout h3{font-size:27px}
+.web-callout p{color:var(--ink-2);max-width:65ch}
+.mini-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.mini-tags span{font:500 12px/1 var(--f-mono);padding:6px 9px;border-radius:5px;background:var(--sheet);border:1px solid var(--line)}
+@media (max-width:860px){.problem-grid{grid-template-columns:1fr 1fr}.why{grid-template-columns:1fr}.auto-flow{grid-template-columns:1fr 1fr}.flow:not(:last-child)::after{display:none}}
+@media (max-width:520px){.problem-grid,.auto-flow{grid-template-columns:1fr}}
+</style></head><body>
+<title>Manu Gupta — AI, Automation, Websites &amp; Business Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: workbench — hero shows a messy slip turning into a clean sheet; work as a ledger of shipped tools; one marigold accent on indigo ink */
+:root{
+  --paper:#f6f7fb; --sheet:#ffffff; --ink:#1b1f3b; --ink-2:#4a5070; --line:#dde0ec;
+  --indigo:#2f3a8f; --marigold:#f2a516; --marigold-ink:#7a4c00; --mint:#1f8a5b; --grid:rgba(47,58,143,.06);
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11132a; --sheet:#181b38; --ink:#eceefb; --ink-2:#a9aecb; --line:#2c3058;
+  --indigo:#9aa6ff; --marigold:#f5b53a; --marigold-ink:#f5b53a; --mint:#4fd39a; --grid:rgba(154,166,255,.06); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11132a; --sheet:#181b38; --ink:#eceefb; --ink-2:#a9aecb; --line:#2c3058;
+  --indigo:#9aa6ff; --marigold:#f5b53a; --marigold-ink:#f5b53a; --mint:#4fd39a; --grid:rgba(154,166,255,.06); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.08;letter-spacing:-.02em}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.mono{font-family:var(--f-mono)}
+section{padding-block:72px}
+.sec-head{display:grid;gap:12px;max-width:640px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(30px,4.4vw,46px);font-weight:800}
+.sec-head p{color:var(--ink-2);margin:0}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font:800 20px/1 var(--f-display);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:14px;height:14px;background:var(--marigold);border-radius:3px;transform:rotate(45deg);display:inline-block}
+.navlinks{display:flex;gap:22px;font-size:15px;color:var(--ink-2)}
+.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f-body);padding:13px 18px;border-radius:999px;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;background:transparent;color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--indigo);border-color:var(--indigo)}
+.btn:hover{transform:translateY(-1px)}
+@media (max-width:760px){.navlinks{display:none}}
+
+/* hero */
+.hero{padding-block:64px 56px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(42px,6.6vw,82px);font-weight:800}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--marigold) 62% 90%,transparent 90%);color:var(--ink)}
+.hero .lede{font-size:19px;color:var(--ink-2);max-width:54ch;margin:22px 0 28px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font:500 12.5px/1 var(--f-mono);padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--sheet);color:var(--ink-2)}
+
+/* hero demo: slip -> sheet */
+.demo{position:relative;min-width:0}
+.slip{background:#fffbe9;color:#3a2f12;border-radius:4px;padding:18px 20px;width:78%;transform:rotate(-4deg);box-shadow:0 10px 30px rgba(20,20,60,.18);font:500 18px/1.55 "Bradley Hand","Segoe Print","Comic Sans MS",cursive}
+.slip small{display:block;font:500 11px/1 var(--f-mono);color:#8a7a45;letter-spacing:.1em;margin-bottom:8px}
+.arrow{font:500 12px/1 var(--f-mono);color:var(--marigold-ink);display:flex;align-items:center;gap:8px;margin:14px 0 10px 18%}
+.arrow::before{content:"";width:34px;height:2px;background:var(--marigold)}
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(20,20,60,.12);margin-left:10%}
+.sheet .bar{display:flex;justify-content:space-between;font:500 11px/1 var(--f-mono);padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.sheet .bar b{color:var(--mint);font-weight:500}
+.sheet table{width:100%;border-collapse:collapse;font:400 13px/1 var(--f-mono);font-variant-numeric:tabular-nums}
+.sheet th,.sheet td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left}
+.sheet th{color:var(--ink-2);font-weight:500;background:color-mix(in srgb,var(--indigo) 6%,transparent)}
+.sheet td.n{text-align:right}
+.sheet tr:last-child td{border-bottom:0;font-weight:500}
+.sheet tbody tr{animation:fill .5s both}
+.sheet tbody tr:nth-child(2){animation-delay:.15s}.sheet tbody tr:nth-child(3){animation-delay:.3s}.sheet tbody tr:nth-child(4){animation-delay:.45s}
+@keyframes fill{from{background:color-mix(in srgb,var(--marigold) 30%,transparent)}to{background:transparent}}
+@media (prefers-reduced-motion:reduce){.sheet tbody tr{animation:none}.btn:hover{transform:none}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.slip{width:88%}}
+
+/* proof strip */
+.proof{border-block:1px solid var(--line);background:var(--sheet);padding-block:34px}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat b{display:block;font:800 clamp(28px,3.6vw,40px)/1 var(--f-display);letter-spacing:-.02em}
+.stat span{display:block;color:var(--ink-2);font-size:14.5px;margin-top:8px;max-width:26ch}
+@media (max-width:760px){.proof .wrap{grid-template-columns:1fr 1fr}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--sheet)}
+.svc{padding:30px;display:grid;gap:12px;align-content:start;border-bottom:1px solid var(--line);min-width:0}
+.svc:nth-child(odd){border-right:1px solid var(--line)}
+.svc:nth-last-child(-n+2){border-bottom:0}
+.svc .tag{font:500 12px/1 var(--f-mono);color:var(--marigold-ink);letter-spacing:.06em}
+.svc h3{font-size:25px;font-weight:700}
+.svc p{margin:0;color:var(--ink-2)}
+.svc ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
+.svc li::before{content:"→ ";color:var(--indigo);font-family:var(--f-mono)}
+@media (max-width:760px){.services{grid-template-columns:1fr}.svc:nth-child(odd){border-right:0}.svc:nth-last-child(2){border-bottom:1px solid var(--line)}}
+
+/* work ledger */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{font:500 13px/1 var(--f-mono);padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--ink-2);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ledger{display:grid;gap:0;border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:200px 1fr 170px;gap:24px;padding:24px 4px;border-bottom:1px solid var(--line);align-items:start}
+.row:hover{background:color-mix(in srgb,var(--sheet) 70%,transparent)}
+.row h3{font-size:24px;font-weight:700}
+.row .kind{font:500 12px/1.4 var(--f-mono);color:var(--ink-2);margin-top:6px}
+.row p{margin:0 0 10px;color:var(--ink-2);min-width:0}
+.row .stack{display:flex;flex-wrap:wrap;gap:6px}
+.row .stack span{font:400 12px/1 var(--f-mono);padding:5px 8px;border-radius:4px;background:color-mix(in srgb,var(--indigo) 9%,transparent);color:var(--indigo)}
+.status{font:500 12px/1.3 var(--f-mono);display:flex;align-items:center;gap:8px;justify-self:end;text-align:right}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);flex:none}
+.status.build::before{background:var(--marigold)}
+.price{display:block;font:600 14px/1.3 var(--f-body);color:var(--ink);margin-top:6px;text-align:right}
+@media (max-width:760px){.row{grid-template-columns:1fr;gap:10px}.status{justify-self:start;text-align:left}.price{text-align:left}}
+
+/* case */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:30px;display:grid;gap:14px;align-content:start;min-width:0}
+.card h3{font-size:26px;font-weight:700}
+.card p{margin:0;color:var(--ink-2)}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-top:6px}
+.ba div{border:1px dashed var(--line);border-radius:10px;padding:14px;text-align:center}
+.ba b{display:block;font:800 30px/1 var(--f-display)}
+.ba small{font:500 11px/1 var(--f-mono);color:var(--ink-2);letter-spacing:.08em}
+.ba .after{border:1.5px solid var(--mint)}.ba .after b{color:var(--mint)}
+@media (max-width:760px){.case{grid-template-columns:1fr}}
+
+/* training */
+.train{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.course{border-top:3px solid var(--indigo);background:var(--sheet);padding:24px;border-radius:0 0 12px 12px;display:grid;gap:10px;align-content:start}
+.course h3{font-size:21px;font-weight:700}
+.course p{margin:0;color:var(--ink-2);font-size:15.5px}
+.course:nth-child(2){border-color:var(--marigold)}.course:nth-child(3){border-color:var(--mint)}
+@media (max-width:860px){.train{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{display:grid;gap:8px;align-content:start}
+.step::before{counter-increment:s;content:"0" counter(s);font:500 13px/1 var(--f-mono);color:var(--marigold-ink);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:6px}
+.step h3{font-size:20px;font-weight:700}
+.step p{margin:0;color:var(--ink-2);font-size:15.5px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper);border-radius:20px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact h2{font-size:clamp(30px,4.4vw,48px);font-weight:800}
+.contact p{color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.contact .eyebrow{color:var(--marigold)}
+.line-item{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid color-mix(in srgb,var(--paper) 18%,transparent)}
+.line-item span{font:500 15px/1.3 var(--f-mono);word-break:break-all}
+.copy{font:500 12px/1 var(--f-mono);padding:8px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);background:transparent;color:var(--paper);cursor:pointer}
+form{display:grid;gap:12px}
+label{font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 70%,transparent)}
+input,select,textarea{width:100%;font:400 16px/1.4 var(--f-body);padding:12px 14px;border-radius:10px;border:1px solid color-mix(in srgb,var(--paper) 25%,transparent);background:color-mix(in srgb,var(--paper) 7%,transparent);color:var(--paper)}
+select option{color:#1b1f3b}
+textarea{min-height:96px;resize:vertical}
+.contact .btn.primary{background:var(--marigold);color:#1b1f3b;border-color:var(--marigold);justify-content:center}
+.out{font:400 14px/1.5 var(--f-mono);background:color-mix(in srgb,var(--paper) 8%,transparent);border-radius:10px;padding:14px;white-space:pre-wrap}
+.out.ok{border-left:3px solid var(--mint)}
+.out.err{border-left:3px solid #e5484d}
+input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#e5484d}
+.contact .btn.primary:disabled{opacity:.6;cursor:wait;transform:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (max-width:860px){.contact{grid-template-columns:1fr;padding:28px}}
+
+footer{padding-block:36px;color:var(--ink-2);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i>Manu Gupta</a>
+    <div class="navlinks">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#work">Work</a><a href="#training">Training</a><a href="#process">Process</a>
+    </div>
+    <a class="btn primary" href="#contact">Book a free call</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">AI · Automation · Websites · Data · Business Software</p>
+      <h1 style="margin-top:16px">I build <em>digital solutions</em> that make your business easier to run.</h1>
+      <p class="lede">From business websites and landing pages to AI automation, dashboards and custom software — I design, build and deploy practical solutions around the way your business actually works.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Tell me what you need</a>
+        <a class="btn" href="#work">See what I've built</a>
+      </div>
+      <div class="chips">
+        <span class="chip">n8n</span><span class="chip">Make.com</span><span class="chip">Power BI</span><span class="chip">Python · Flask</span><span class="chip">React</span><span class="chip">Firebase</span><span class="chip">Airtable</span><span class="chip">Gemini · Claude API</span>
+      </div>
+    </div>
+    <div class="demo" aria-label="Example: a handwritten slip converted to an Excel sheet">
+      <div class="slip">
+        <small>ROUGH SLIP · 14/09</small>
+        Sports shoe blk 7-10 — 12 ctn<br>
+        Loafer brn 6-9 — 8 ctn<br>
+        Slipper kids — 20 ctn<br>
+        <span style="text-decoration:line-through">sandal</span> total = 40
+      </div>
+      <div class="arrow">Slip Se Excel · AI extract</div>
+      <div class="sheet">
+        <div class="bar"><span>stock_entry.xlsx</span><b>● 4 rows filled</b></div>
+        <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Item</th><th>Size</th><th class="n">Cartons</th></tr></thead>
+          <tbody>
+            <tr><td>Sports Shoe · Black</td><td>7–10</td><td class="n">12</td></tr>
+            <tr><td>Loafer · Brown</td><td>6–9</td><td class="n">8</td></tr>
+            <tr><td>Kids Slipper</td><td>—</td><td class="n">20</td></tr>
+            <tr><td>Total</td><td></td><td class="n">40</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <div class="stat"><b>9h → 30m</b><span>Reporting work automated for a client</span></div>
+    <div class="stat"><b>10+</b><span>Apps, tools and automations built and shipped</span></div>
+    <div class="stat"><b>UK · India</b><span>Clients served, including a UK welding company since 2024</span></div>
+    <div class="stat"><b>5-person</b><span>Skill Edge team for training and delivery</span></div>
+  </div>
+
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The problems I solve</p>
+      <h2>Still doing work manually that software could handle?</h2>
+      <p>Tell me what is repetitive, slow or difficult to manage. I’ll help you find the simplest practical solution.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem"><b>Too many spreadsheets</b><span>Sales, stock, reports or customer data scattered across files.</span></div>
+      <div class="problem"><b>Leads need chasing</b><span>New enquiries arrive, but follow-ups depend on someone remembering.</span></div>
+      <div class="problem"><b>Reports take hours</b><span>Data cleaning and recurring reporting eat up valuable working time.</span></div>
+      <div class="problem"><b>Your website isn't converting</b><span>You need a professional website or landing page that turns visitors into enquiries.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What I do</p>
+      <h2>Five ways I can help your business grow</h2>
+      <p>You don’t need to know which tool to use. Tell me the business problem and I’ll suggest the right route.</p>
+    </div>
+    <div class="services">
+      <div class="svc">
+        <span class="tag">AUTOMATION</span>
+        <h3>Workflows that run while you sleep</h3>
+        <p>n8n and Make.com flows that collect leads, update sheets, send WhatsApp messages and post content on schedule.</p>
+        <ul><li>Lead capture into Airtable / Google Sheets</li><li>Auto-posting to LinkedIn, Facebook, Instagram</li><li>Report generation and cleanup</li></ul>
+      </div>
+
+      <div class="svc">
+        <span class="tag">WEBSITES + LANDING PAGES</span>
+        <h3>Websites designed to get you enquiries</h3>
+        <p>Professional, responsive websites and focused landing pages for businesses, services and campaigns.</p>
+        <ul><li>Business and service websites</li><li>High-converting landing pages</li><li>WhatsApp, forms and lead capture</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">CUSTOM APPS</span>
+        <h3>Business software built for how you work</h3>
+        <p>Billing, stock, gym, payroll and staff tools. Built fast, hosted for you, and owned by your business.</p>
+        <ul><li>GST billing with Tally export</li><li>Stock and order management</li><li>Role-based staff logins, mobile-friendly</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">DASHBOARDS</span>
+        <h3>Power BI and Excel that answer questions</h3>
+        <p>See sales, stock and performance in one screen instead of ten spreadsheets. Clean data models, clear visuals.</p>
+        <ul><li>Power BI dashboards and data models</li><li>Excel templates and automated reports</li><li>SQL and Python data cleaning</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">AI TOOLS + TRAINING</span>
+        <h3>AI your team will actually use</h3>
+        <p>Chatbots, document scanners and AI assistants, plus hands-on training through Skill Edge so your people can run them.</p>
+        <ul><li>AI bill and slip scanning</li><li>RAG chatbots on your own data</li><li>Corporate workshops on AI and automation</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Automation examples</p>
+      <h2>What I can automate for you</h2>
+      <p>These are the kinds of workflows that remove repetitive work without forcing you to change how your business operates.</p>
+    </div>
+    <div class="auto-flow">
+      <div class="flow"><b>Lead → CRM</b><span>Capture enquiry, clean data and save it automatically.</span></div>
+      <div class="flow"><b>CRM → WhatsApp</b><span>Trigger follow-ups and reminders at the right time.</span></div>
+      <div class="flow"><b>Data → Report</b><span>Clean, transform and generate recurring reports.</span></div>
+      <div class="flow"><b>AI → Action</b><span>Extract, classify, summarise or route information automatically.</span></div>
+    </div>
+    <div class="web-callout">
+      <h3>Need a website or landing page?</h3>
+      <p>I can design the page, build it responsively, connect your enquiry flow and add WhatsApp/automation so the website becomes part of your sales system—not just an online brochure.</p>
+      <div class="mini-tags"><span>Business Website</span><span>Landing Page</span><span>Lead Form</span><span>WhatsApp</span><span>Analytics</span><span>Automation</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Why work with me</p>
+      <h2>Business problem first. Technology second.</h2>
+    </div>
+    <div class="why">
+      <div class="why-main">
+        <img class="why-photo" src="assets/manu-gupta.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Manu Gupta at a desk with a laptop and a mug reading “Build, Automate, Grow”">
+        <h3>I don't start by selling you a tool.</h3>
+        <p>I first understand the work, the people involved and where time is being lost. Then I build the simplest system that solves the problem.</p>
+        <p>That can be a website, an automation, a dashboard, an AI workflow—or a combination of them.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item"><b>End-to-end delivery</b><span>Design, development, deployment and team handover.</span></div>
+        <div class="why-item"><b>Built around your process</b><span>Not a generic template forced onto your business.</span></div>
+        <div class="why-item"><b>Practical AI</b><span>AI where it saves time or improves decisions—not AI for the sake of AI.</span></div>
+        <div class="why-item"><b>Human support</b><span>You get training and support after the system goes live.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Shipped work</p>
+      <h2>Real tools, used by real businesses</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button id="f-all" data-f="all" aria-pressed="true">All</button>
+      <button id="f-saas" data-f="saas" aria-pressed="false">Business apps</button>
+      <button id="f-ai" data-f="ai" aria-pressed="false">AI tools</button>
+      <button id="f-auto" data-f="auto" aria-pressed="false">Automation &amp; data</button>
+    </div>
+    <div class="ledger">
+      <article class="row" data-c="saas ai">
+        <div><h3>BillZen</h3><div class="kind">GST billing SaaS</div></div>
+        <div><p>Indian GST invoices, Tally XML export, staff roles and permissions, AI bill scanning with Gemini, and installable on phone as an app. Now live in a wholesale business.</p>
+          <div class="stack"><span>Flask</span><span>SQLite</span><span>Gemini API</span><span>PWA</span></div></div>
+        <div><span class="status">Live · early days</span><span class="price">Setup from ₹20,000</span></div>
+      </article>
+      <article class="row" data-c="ai saas">
+        <div><h3>Slip Se Excel</h3><div class="kind">Handwriting → Excel</div></div>
+        <div><p>Snap a photo of a rough handwritten slip and get a filled Excel sheet in your own template. Works on phone, shares straight to WhatsApp. Custom templates for any trade.</p>
+          <div class="stack"><span>AI vision</span><span>Firebase</span><span>Excel export</span></div></div>
+        <div><span class="status build">In development</span></div>
+      </article>
+      <article class="row" data-c="ai saas">
+        <div><h3>AI Market Intelligence</h3><div class="kind">Stocks + crypto analysis</div></div>
+        <div><p>An AI analysis app for stock and crypto traders, with a fast React front end and a Python API behind it.</p>
+          <div class="stack"><span>React</span><span>FastAPI</span><span>Vercel</span><span>Render</span></div></div>
+        <div><span class="status">Deployed</span></div>
+      </article>
+      <article class="row" data-c="saas">
+        <div><h3>Skill Edge LMS</h3><div class="kind">Student portal</div></div>
+        <div><p>Live session scheduling, WhatsApp messaging centre, certificate generator, leaderboard and student work submissions.</p>
+          <div class="stack"><span>Firebase</span><span>Firestore</span><span>Netlify</span></div></div>
+        <div><span class="status">Live</span></div>
+      </article>
+      <article class="row" data-c="saas">
+        <div><h3>GymSync</h3><div class="kind">Gym management app</div></div>
+        <div><p>Workout logging, trainer task assignment, invite-code joining and an in-app notification centre for gym owners and members.</p>
+          <div class="stack"><span>React Native</span><span>Expo</span><span>Supabase</span></div></div>
+        <div><span class="status build">In development</span></div>
+      </article>
+      <article class="row" data-c="saas auto">
+        <div><h3>Shop Business Manager</h3><div class="kind">Wholesale trading ops</div></div>
+        <div><p>Orders, stock and accounts for a wholesale footwear business, backed by 28 API endpoints. Paired with an Instagram lead-generation flow that de-duplicates and saves WhatsApp contacts to Airtable.</p>
+          <div class="stack"><span>Flask</span><span>n8n</span><span>Apify</span><span>Airtable</span></div></div>
+        <div><span class="status">In daily use</span></div>
+      </article>
+      <article class="row" data-c="ai auto">
+        <div><h3>LinkedIn Writer Agent</h3><div class="kind">AI content pipeline</div></div>
+        <div><p>Drafts posts with AI, generates images, and publishes to LinkedIn and Facebook on a schedule after approval.</p>
+          <div class="stack"><span>CrewAI</span><span>Make.com</span><span>Gemini</span><span>Groq</span></div></div>
+        <div><span class="status">Live</span></div>
+      </article>
+      <article class="row" data-c="auto">
+        <div><h3>Power BI Dashboards</h3><div class="kind">UK welding company</div></div>
+        <div><p>Ongoing dashboard work for a UK client, won through LinkedIn. Operations data turned into clear, decision-ready reports.</p>
+          <div class="stack"><span>Power BI</span><span>DAX</span><span>Power Query</span></div></div>
+        <div><span class="status">Ongoing since 2024</span></div>
+      </article>
+      <article class="row" data-c="ai auto">
+        <div><h3>LeaveIQ Lite</h3><div class="kind">Leave analytics</div></div>
+        <div><p>Browser-based leave analytics dashboard for HR. No install, no server, works from one file.</p>
+          <div class="stack"><span>HTML</span><span>JavaScript</span><span>Charts</span></div></div>
+        <div><span class="status">Live</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:24px">
+  <div class="wrap case">
+    <div class="card">
+      <p class="eyebrow">Case study · client automation</p>
+      <h3>A full working day, cut to half an hour</h3>
+      <p>The team was cleaning errors, analysing data and filling report templates by hand every cycle. I automated the whole chain end to end.</p>
+      <div class="ba">
+        <div><small>BEFORE</small><b>8–9 hrs</b></div>
+        <span class="mono" aria-hidden="true">→</span>
+        <div class="after"><small>AFTER</small><b>30 min</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Case study · UK client</p>
+      <h3>From a LinkedIn message to a long-term client</h3>
+      <p>A UK welding company needed dashboards they could trust. I started with one report in 2024 and still build and maintain their Power BI work today.</p>
+      <p>What they get: one source of truth for operations, refreshed on schedule, with no spreadsheet chasing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Skill Edge · training</p>
+      <h2>Learn it by building it</h2>
+      <p>Project-based programmes in English and Hinglish for working professionals, students and business teams—learn by building real projects.</p>
+    </div>
+    <div class="train">
+      <div class="course"><h3>Data Analytics</h3><p>Excel, Power BI and SQL with real business datasets. Finish with a portfolio of dashboards.</p></div>
+      <div class="course"><h3>Generative AI &amp; Agents</h3><p>Prompting, AI tools, RAG and agents. Build a working AI app in a live workshop.</p></div>
+      <div class="course"><h3>Automation with n8n</h3><p>Automate leads, reports and messages with n8n and Make.com. Every module ends in a working flow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How we work</p>
+      <h2>From first call to running system</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Free audit call</h3><p>30 minutes. You show me the work that takes the most time.</p></div>
+      <div class="step"><h3>Fixed quote</h3><p>A clear plan, a fixed price and a timeline. No surprise bills.</p></div>
+      <div class="step"><h3>Build and test</h3><p>You see working versions every few days and give feedback early.</p></div>
+      <div class="step"><h3>Launch and train</h3><p>I deploy, train your team, and keep supporting after go-live.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:24px">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <p class="eyebrow">Start here</p>
+        <h2 style="margin:14px 0">What would you like to build, automate or improve?</h2>
+        <p>Tell me what you need in two lines. I’ll suggest the right solution and a practical next step.</p>
+        <div class="line-item"><span id="phone">+91 87000 46125</span><button class="copy" data-copy="+918700046125">Copy number</button></div>
+        <div class="line-item"><span>linkedin.com/in/manugupta79</span><a class="copy" href="https://www.linkedin.com/in/manugupta79/" target="_blank" rel="noopener" style="text-decoration:none">Open LinkedIn ↗</a></div>
+        <div class="line-item"><span>github.com/guptamannu697-png</span><a class="copy" href="https://github.com/guptamannu697-png" target="_blank" rel="noopener" style="text-decoration:none">Open GitHub ↗</a></div>
+        <div class="line-item"><span>WhatsApp · Mon–Sat</span><a class="copy" href="https://wa.me/918700046125" target="_blank" rel="noopener" style="text-decoration:none">Open WhatsApp ↗</a></div>
+      </div>
+      <form id="lead" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <label for="name">Your name</label>
+        <input id="name" name="name" required minlength="2" maxlength="100" autocomplete="name" placeholder="Rahul Sharma">
+        <label for="biz">Business type</label>
+        <input id="biz" name="business" maxlength="120" placeholder="Wholesale, clinic, gym, institute…">
+        <label for="need">I need help with</label>
+        <select id="need" name="need">
+          <option>Automation (n8n / Make.com)</option>
+          <option>Custom business app</option>
+          <option>Power BI / Excel dashboard</option>
+          <option>AI tool or chatbot</option>
+          <option>Team training</option>
+        </select>
+        <label for="msg">What takes too much time today?</label>
+        <textarea id="msg" name="message" required minlength="10" maxlength="3000" placeholder="We type 200 handwritten bills into Excel every week…"></textarea>
+        <button id="sendBtn" class="btn primary" type="submit">Send my enquiry</button>
+        <div id="status" class="out" role="status" aria-live="polite" hidden></div>
+        <div id="out" class="out" hidden></div>
+        <button id="copyMsg" class="copy" type="button" hidden>Copy message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Manu Gupta · AI, Automation, Websites &amp; Data</span>
+    <span class="mono">AI · Automation · Data</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btns=document.querySelectorAll('.filters button');
+  const rows=document.querySelectorAll('.row');
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+    const f=b.dataset.f;
+    rows.forEach(r=>{r.hidden=!(f==='all'||r.dataset.c.split(' ').includes(f));});
+  }));
+  function copy(text,btn){
+    const done=()=>{const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1500)};
+    try{navigator.clipboard.writeText(text).then(done,()=>{btn.textContent='Select & copy above'});}catch(e){btn.textContent='Select & copy above'}
+  }
+  document.querySelectorAll('button.copy[data-copy]').forEach(b=>b.addEventListener('click',()=>copy(b.dataset.copy,b)));
+  const form=document.getElementById('lead'),out=document.getElementById('out'),cb=document.getElementById('copyMsg');
+  const status=document.getElementById('status'),send=document.getElementById('sendBtn'),sendLabel=send.textContent;
+  const v=id=>document.getElementById(id).value.trim();
+  let sending=false;
+  function show(msg,kind){status.textContent=msg;status.className='out '+kind;status.hidden=false}
+  function validate(){
+    const errs=[];
+    [['name',2,'Please enter your name.'],['msg',10,'Please describe what you need (at least 10 characters).']].forEach(([id,min,m])=>{
+      const el=document.getElementById(id),bad=v(id).length<min;
+      el.setAttribute('aria-invalid',bad);
+      if(bad)errs.push([el,m]);
+    });
+    if(errs.length){show(errs.map(x=>x[1]).join('\n'),'err');errs[0][0].focus();return false}
+    return true;
+  }
+  form.addEventListener('input',e=>{if(e.target.getAttribute('aria-invalid')==='true'&&e.target.value.trim())e.target.removeAttribute('aria-invalid')});
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(sending)return;
+    out.hidden=true;cb.hidden=true;
+    if(!validate())return;
+    sending=true;send.disabled=true;send.textContent='Sending…';
+    show('Sending your enquiry…','');
+    const data=new FormData(form);
+    ['name','business','message'].forEach(k=>data.set(k,String(data.get(k)||'').trim()));
+    try{
+      const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
+      const res=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString(),signal:ctrl.signal});
+      clearTimeout(timer);
+      if(!res.ok)throw new Error('HTTP '+res.status);
+      form.reset();
+      show('Thanks — your enquiry has been sent. I’ll get back to you soon.','ok');
+    }catch(err){
+      // Keep the user's text and offer a fallback so the lead isn't lost
+      out.textContent=`Hi Manu, I'm ${v('name')}${v('biz')?' from a '+v('biz')+' business':''}.\nI need help with: ${v('need')}.\n${v('msg')}`;
+      out.hidden=false;cb.hidden=false;
+      show('Sorry, your enquiry could not be sent. Please try again, or copy the message below and send it on WhatsApp (+91 87000 46125).','err');
+    }finally{
+      sending=false;send.disabled=false;send.textContent=sendLabel;
+    }
+  });
+  cb.addEventListener('click',()=>copy(out.textContent,cb));
+})();
+</script>
+
+</body></html>
